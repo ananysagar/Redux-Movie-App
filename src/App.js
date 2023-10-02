@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
-
 import './App.scss';
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
@@ -13,11 +12,13 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" exact Component={Home} />
-          <Route path="/movie/:imdbID" Component={MovieDetail} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+          <div className='container'>
+            <Routes>
+              <Route path="/" exact Component={Home} />
+              <Route path="/movie/:imdbID" Component={MovieDetail} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </div>
         <Footer />
       </Router>
     </div>
